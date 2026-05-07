@@ -1,0 +1,86 @@
+/* =================================================================
+   expertise.css — Expertise section: grid + cards
+================================================================= */
+
+#expertise {
+  background: var(--lavender-soft);
+  border-top:    1px solid rgba(209, 196, 233, 0.5);
+  border-bottom: 1px solid rgba(209, 196, 233, 0.5);
+}
+
+.expertise-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.expertise-grid > * {
+  flex: 0 1 calc(33.333% - 0.85rem);
+  min-width: 260px;
+}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.expertise-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.875rem;
+  box-shadow: var(--shadow-xs);
+  transition:
+    transform    var(--transition),
+    box-shadow   var(--transition),
+    border-color var(--transition);
+}
+
+.expertise-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-plum);
+  border-color: var(--lavender);
+}
+
+/* ── Icon ───────────────────────────────────────────────────── */
+.expertise-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.expertise-card:hover .expertise-icon {
+  transform: scale(1.1) rotate(-3deg);
+}
+
+/* ── Text ───────────────────────────────────────────────────── */
+.expertise-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.625rem;
+  letter-spacing: -0.01em;
+}
+
+.expertise-card p {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--ink-muted);
+}
+
+.mono-detail {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--plum);
+  margin-top: 1rem;
+  opacity: 0.75;
+  letter-spacing: 0.04em;
+  transition: opacity var(--transition-fast);
+}
+
+.expertise-card:hover .mono-detail { opacity: 1; }

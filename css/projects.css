@@ -1,0 +1,150 @@
+/* =================================================================
+   projects.css — Projects section: grid + cards
+================================================================= */
+
+#projects {
+  background: var(--mint-soft);
+  border-top:    1px solid rgba(200, 230, 201, 0.5);
+  border-bottom: 1px solid rgba(200, 230, 201, 0.5);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+/* ── Card link wrapper ─────────────────────────────────────── */
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  border-radius: var(--radius-xl);
+  transition: transform var(--transition);
+}
+
+.project-card-link:hover,
+.project-card-link:focus-visible {
+  outline: none;
+}
+
+/* ── Card ───────────────────────────────────────────────────── */
+.project-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 2rem 2rem 1.875rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition:
+    transform    var(--transition),
+    box-shadow   var(--transition),
+    border-color var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+/* Accent bar at top of card */
+.project-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  opacity: 0.85;
+  transition:
+    opacity var(--transition),
+    height  var(--transition);
+}
+
+.project-card:hover .project-accent {
+  opacity: 1;
+  height: 4px;
+}
+
+/* ── Type label ─────────────────────────────────────────────── */
+.project-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* ── Heading ────────────────────────────────────────────────── */
+.project-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.025em;
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover h3 { color: var(--plum); }
+
+/* ── Description ────────────────────────────────────────────── */
+.project-card p {
+  font-size: 0.85rem;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Tags ───────────────────────────────────────────────────── */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 500;
+  padding: 0.28rem 0.65rem;
+  border-radius: 5px;
+  background: var(--lavender-soft);
+  color: var(--plum);
+  border: 1px solid var(--lavender);
+  letter-spacing: 0.02em;
+  transition: background var(--transition-fast);
+}
+
+.project-card:hover .project-tag { background: var(--lavender); }
+
+/* ── Arrow icon ─────────────────────────────────────────────── */
+.project-arrow {
+  position: absolute;
+  top: 1.875rem;
+  right: 1.875rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition:
+    background   var(--transition),
+    color        var(--transition),
+    border-color var(--transition),
+    transform    var(--transition);
+}
+
+.project-card:hover .project-arrow {
+  background: var(--plum);
+  color: white;
+  border-color: var(--plum);
+  transform: translate(2px, -2px);
+}

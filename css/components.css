@@ -1,0 +1,182 @@
+/* =================================================================
+   components.css — Shared UI components
+   Buttons, social bar, pills, status dot
+   Used across multiple sections — lives here to avoid duplication
+================================================================= */
+
+/* ── Primary Button ─────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ink);
+  color: white;
+  padding: 0.875rem 1.875rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: var(--shadow-sm);
+  transition:
+    background  var(--transition),
+    transform   var(--transition),
+    box-shadow  var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--plum);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-plum);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+/* ── Ghost Button ───────────────────────────────────────────── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1.5px solid var(--border-strong);
+  color: var(--ink-light);
+  padding: 0.875rem 1.875rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition:
+    border-color var(--transition),
+    background   var(--transition),
+    color        var(--transition),
+    transform    var(--transition);
+}
+
+.btn-ghost:hover {
+  border-color: var(--lavender);
+  background: var(--lavender-soft);
+  color: var(--plum);
+  transform: translateY(-2px);
+}
+
+/* ── Contact Email Link ─────────────────────────────────────── */
+.contact-email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--ink);
+  color: white;
+  padding: 1rem 2.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  box-shadow: var(--shadow-sm);
+  transition:
+    background  var(--transition),
+    transform   var(--transition),
+    box-shadow  var(--transition);
+}
+
+.contact-email-link:hover {
+  background: var(--plum);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-plum);
+}
+
+/* ── Status Pill ────────────────────────────────────────────── */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--mint-soft);
+  border: 1px solid var(--mint);
+  border-radius: var(--radius-full);
+  padding: 0.4rem 1rem 0.4rem 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-light);
+  margin-bottom: 1.75rem;
+  width: fit-content;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--sage);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulseDot 2.5s ease-in-out infinite;
+}
+
+/* ── Floating Social Bar ────────────────────────────────────── */
+#social-bar {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  animation: slideInRight 0.8s 0.6s var(--ease-out) both;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: white;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  box-shadow: var(--shadow-sm);
+  transition:
+    background   var(--transition),
+    color        var(--transition),
+    border-color var(--transition),
+    transform    var(--transition),
+    box-shadow   var(--transition);
+}
+
+.social-link:hover {
+  background: var(--ink);
+  color: white;
+  border-color: var(--ink);
+  transform: translateX(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Eyebrow Pill (hero) ────────────────────────────────────── */
+.eyebrow-pill {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 400;
+  background: var(--lavender-soft);
+  border: 1px solid var(--lavender);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.75rem;
+  color: var(--plum);
+  letter-spacing: 0.04em;
+}
+
+/* ── Tech Tag ───────────────────────────────────────────────── */
+.tech-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--lavender-soft);
+  border: 1px solid var(--lavender);
+  color: var(--plum);
+  letter-spacing: 0.02em;
+  transition:
+    background var(--transition-fast),
+    transform  var(--transition-fast);
+}
+
+.tech-tag:hover {
+  background: var(--lavender);
+  transform: translateY(-1px);
+}
